@@ -1,0 +1,14 @@
+<div>
+<h1>Login</h1>
+
+<form [formGroup]="login" (ngSubmit)="onSubmit()">
+
+    <label for="name">Name: </label>
+    <input id="name" type="text" placeholder="Your username..." formControlName="username">
+    <button class="button" type="submit">Login</button>
+    <div *ngIf="!login.valid">Username is required!</div>
+</form>
+
+    
+  
+</div>
