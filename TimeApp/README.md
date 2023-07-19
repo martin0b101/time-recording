@@ -38,7 +38,7 @@ Ta login screen je lahko zelo preprost, npr. okno kjer vpiše svoje uporabniško
 
 - Ustvari privat [GitHub](https://github.com/) repozitorij za nalogo. Za oddajo naloge dodaj uporabnika `cilinder` na ta repozitorij.
 
-- Ko se uporabnik logina, naj si aplikacija zapomne trenutnega userja, kajti beležili bomo čas, ki ga je ta user preživel na različnih straneh te aplikacije.
+- Ko se uporabnik logina, naj si aplikacija zapomne trenutnega userja, kajti beležili bomo čas, ki ga je ta user preživel na različnih straneh te aplikacije. 
 
 - Po loginu naj userja preusmeri na nek home page, kjer ima na voljo preklapljanja med različnimi stranmi aplikacije. 
 

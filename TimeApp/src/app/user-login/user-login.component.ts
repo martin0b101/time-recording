@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
+import { ShowNavbarService } from '../services/showNavbar.service';
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css']
+  styleUrls: ['./user-login.component.css'], 
+  providers: [ShowNavbarService]
 })
 
 export class UserLoginComponent {
@@ -17,7 +19,7 @@ export class UserLoginComponent {
       Validators.minLength(2)])
   });
  
-  constructor(private router: Router) { }
+  constructor(private router: Router, private navbarShow: ShowNavbarService) { }
 
   onSubmit(): void {
     console.log("Username is:", this.login.value.username);
@@ -29,6 +31,7 @@ export class UserLoginComponent {
       }
 
       localStorage.setItem("CURRENT_USER", this.login.value.username);
+      this.navbarShow.showNavBar(true);
       this.router.navigate(['Main']);
     }
   }

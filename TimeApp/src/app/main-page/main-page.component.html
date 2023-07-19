@@ -1,4 +1,4 @@
-<p>main-page works!</p>
+<h1>Main Page</h1>
 
 <h3>Username: {{ username }}</h3>
 
@@ -6,10 +6,18 @@
 
 <table>
     <tr>
+        <th>Page</th>
+        <th>Time</th>
+    </tr>
+    <tr>
         <td>Time main:</td>
         <td>{{ jsonTimes["TIME_MAIN"] }}</td>
+    </tr>
+    <tr>
         <td>Time contacts:</td>
         <td>{{ jsonTimes["TIME_CONTACTS"] }}</td>
+    </tr>
+    <tr>
         <td>Time about us:</td>
         <td>{{ jsonTimes["TIME_ABOUT"] }}</td>
     </tr>
