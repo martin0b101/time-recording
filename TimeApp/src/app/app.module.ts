@@ -10,15 +10,16 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
-import { TimeTrackingService } from './services/tracking.service';
 import { ShowNavbarService } from './services/showNavbar.service';
 import { NavbarComponent } from './navbar/navbar.component';
 
+
+
 const routes: Routes = [
-  { path: 'About', component: AboutComponent },
-  { path: 'Contacts', component: ContactsComponent },
-  { path: 'Main', component: MainPageComponent },
-  { path: '', component: UserLoginComponent},
+  { path: 'About', component: AboutComponent, canActivate:[() => sessionStorage.getItem("isLoggedIn") === 'true'] },
+  { path: 'Contacts', component: ContactsComponent, canActivate:[() => sessionStorage.getItem("isLoggedIn") === 'true']},
+  { path: 'Main', component: MainPageComponent, canActivate:[() => sessionStorage.getItem("isLoggedIn") === 'true'] },
+  { path: '', component: UserLoginComponent, canActivate:[() => sessionStorage.getItem("isLoggedIn") === 'false']},
   { path: '**', component: PageNotFoundComponent}
 ];
 

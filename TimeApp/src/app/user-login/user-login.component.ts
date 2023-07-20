@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
 import { ShowNavbarService } from '../services/showNavbar.service';
 
 @Component({
@@ -27,7 +26,7 @@ export class UserLoginComponent {
     if(this.login.value.username){
       if (!localStorage.getItem(this.login.value.username)){
         localStorage.setItem(this.login.value.username, JSON.stringify(
-        {START_TIME_MAIN: 0, TIME_MAIN: 0, START_TIME_ABOUT:0, TIME_ABOUT: 0, START_TIME_CONTACTS:0, TIME_CONTACTS: 0}));
+        { TIME_MAIN: 0, TIME_ABOUT: 0, TIME_CONTACTS: 0}));
       }
       localStorage.setItem("CURRENT_USER", this.login.value.username);
       this.navbarShow.login();

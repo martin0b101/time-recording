@@ -1,7 +1,5 @@
 import { Component, Injectable } from '@angular/core';
 import { OnInit, OnDestroy } from '@angular/core';
-import { TimeTrackingService } from '../services/tracking.service';
-import { ShowNavbarService } from '../services/showNavbar.service';
 
 const WEB_SITE_NAME :string = "TIME_MAIN";
 const WEB_SITE_START_TIME = "START_TIME_MAIN";
@@ -19,9 +17,7 @@ export class MainPageComponent implements OnInit, OnDestroy{
   intervalId :any;
   timeTracker :any
 
-  constructor(private navbar: ShowNavbarService){
-    this.timeTracker = new TimeTrackingService(WEB_SITE_NAME, WEB_SITE_START_TIME);
-    console.log(this.timeTracker.getCurrentUser());
+  constructor(){
   }
 
   ngOnInit(): void {

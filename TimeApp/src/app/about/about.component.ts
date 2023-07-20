@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TimeTrackingService } from '../services/tracking.service';
 
 const WEB_SITE_NAME :string = "TIME_ABOUT";
 const WEB_SITE_START_TIME = "START_TIME_ABOUT";
@@ -18,15 +17,9 @@ export class AboutComponent implements OnInit, OnDestroy{
   timeTracker :any
 
   constructor(){
-    this.timeTracker = new TimeTrackingService(WEB_SITE_NAME, WEB_SITE_START_TIME);
-    console.log(this.timeTracker.getCurrentUser());
   }
 
   ngOnInit(): void {
-
-    if (!this.username) {
-      this.ngOnDestroy();
-    }
     this.startTrackingTime();
   }
 
