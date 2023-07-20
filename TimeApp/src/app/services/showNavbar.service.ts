@@ -1,15 +1,27 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
 export class ShowNavbarService {
-    private _showNavBar: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-    public showNavBarEmitter: Observable<boolean> = this._showNavBar.asObservable();
+    private readonly sessionStorageKey = 'isLoggedIn';
+    private isLoggedIn: boolean = false;
 
-    constructor() {}
-
-    showNavBar(ifShow: boolean) {
-        this._showNavBar.next(ifShow);
+    constructor() { 
+        this.isLoggedIn = sessionStorage.getItem(this.sessionStorageKey) === 'true';
     }
-
+  
+    login() {
+      this.isLoggedIn = true;
+      sessionStorage.setItem(this.sessionStorageKey, 'true');
+    }
+  
+    logout() {
+      this.isLoggedIn = false;
+      sessionStorage.setItem(this.sessionStorageKey, 'false');
+    }
+  
+    isLoggedInUser(): boolean {
+      return sessionStorage.getItem(this.sessionStorageKey) === 'true';
+    }
 }

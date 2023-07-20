@@ -1,9 +1,4 @@
 <h2>Time app</h2>
-<nav *ngIf="showNavbar">
-  <a class="button" routerLink="/About" routerLinkActive="activebutton" ariaCurrentWhenActive="page">About</a> |
-  <a class="button" routerLink="/Contacts" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Contacts</a> | 
-  <a class="button" routerLink="/Main" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Main</a>
-  <button (click)="logOut()">Log out</button>
-</nav>
+<app-navbar></app-navbar>
 
 <router-outlet></router-outlet>

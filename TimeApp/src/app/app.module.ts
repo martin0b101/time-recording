@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
 import { TimeTrackingService } from './services/tracking.service';
 import { ShowNavbarService } from './services/showNavbar.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   { path: 'About', component: AboutComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
     AppComponent,
     UserLoginComponent,
     PageNotFoundComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -29,9 +29,9 @@ export class UserLoginComponent {
         localStorage.setItem(this.login.value.username, JSON.stringify(
         {START_TIME_MAIN: 0, TIME_MAIN: 0, START_TIME_ABOUT:0, TIME_ABOUT: 0, START_TIME_CONTACTS:0, TIME_CONTACTS: 0}));
       }
-
       localStorage.setItem("CURRENT_USER", this.login.value.username);
-      this.navbarShow.showNavBar(true);
+      this.navbarShow.login();
+      console.log("Navbar show: ", this.navbarShow)
       this.router.navigate(['Main']);
     }
   }
