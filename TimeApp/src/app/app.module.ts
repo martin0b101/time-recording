@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'About', component: AboutComponent, canActivate:[() => sessionStorage.getItem("isLoggedIn") === 'true'] },
   { path: 'Contacts', component: ContactsComponent, canActivate:[() => sessionStorage.getItem("isLoggedIn") === 'true']},
   { path: 'Main', component: MainPageComponent, canActivate:[() => sessionStorage.getItem("isLoggedIn") === 'true'] },
-  { path: '', component: UserLoginComponent, canActivate:[() => sessionStorage.getItem("isLoggedIn") === 'false']},
+  { path: '', component: UserLoginComponent, canActivate:[() => sessionStorage.getItem("isLoggedIn") === 'false' || sessionStorage.getItem("isLoggedIn") == null]},
   { path: '**', component: PageNotFoundComponent}
 ];
 
